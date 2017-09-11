@@ -39,13 +39,20 @@
       },
       "Plain": {
         "description": "It is not an entry element\nConcepts: Foobar (http://foo.org:bar)",
-        "type": "object",
-        "properties": {
-          "Value": {
+        "oneOf": [
+          {
             "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "Value": {
+                "type": "string"
+              }
+            },
+            "required": ["Value"]
           }
-        },
-        "required": ["Value"]
+        ]
       }
     }
   }
