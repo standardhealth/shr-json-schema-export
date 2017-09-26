@@ -1,0 +1,67 @@
+{
+  "https://standardhealthrecord.org/test/shr/test": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://standardhealthrecord.org/test/shr/test",
+    "title": "TODO: Figure out what the title should be.",
+    "type": "object",
+    "anyOf": [
+      { "$ref": "#/definitions/Simple" }
+    ],
+    "definitions": {
+      "Simple": {
+        "description": "It is a simple element\nConcepts: Foobar (http://foo.org:bar)",
+        "type": "object",
+        "properties": {
+          "Value": {
+            "type": "string"
+          },
+          "ShrId": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/ShrId"
+          },
+          "EntryId": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryId"
+          },
+          "FocalSubject": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/FocalSubject"
+          },
+          "SubjectIsThirdPartyFlag": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/SubjectIsThirdPartyFlag"
+          },
+          "Narrative": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Narrative"
+          },
+          "Informant": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Informant"
+          },
+          "Author": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Author"
+          },
+          "AssociatedEncounter": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/AssociatedEncounter"
+          },
+          "OriginalCreationDate": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/OriginalCreationDate"
+          },
+          "LastUpdateDate": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/LastUpdateDate"
+          },
+          "Language": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Language"
+          },
+          "Version": {
+            "$ref": "https://standardhealthrecord.org/test/shr/core#/definitions/Version"
+          },
+          "EntryType": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
+            }
+          }
+        },
+        "required": ["Value", "ShrId", "EntryId", "EntryType", "FocalSubject",
+          "OriginalCreationDate", "LastUpdateDate", "SpecificType", "Status"]
+      }
+    }
+  }
+}
