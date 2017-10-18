@@ -29,7 +29,11 @@ function exportSpecifications(specifications) {
 }
 
 function exportFlattenedSpecifications(specifications) {
-  const schemataDict = exportToJSONSchema(specifications, 'https://standardhealthrecord.org/test', true);
+  const expSpecs = expander.expand(specifications);
+  if (err.errors().length) {
+    expect(err.errors()).to.deep.equal([]);
+  }
+  const schemataDict = exportToJSONSchema(expSpecs, 'https://standardhealthrecord.org/test', true);
   validateSchemata(schemataDict);
   return schemataDict;
 }
