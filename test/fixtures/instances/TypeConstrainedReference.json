@@ -5,8 +5,8 @@
   "CreationTime": { "Value": "2017-11-30T12:34:56Z", "EntryType": { "Value": "http://standardhealthrecord.org/spec/shr/core/CreationTime"} },
   "LastUpdated": { "Value": "2017-11-30T12:34:56Z", "EntryType": { "Value": "http://standardhealthrecord.org/spec/shr/base/LastUpdated"} },
   "Value": {
-    "ShrId": "patient-id",
-    "EntryId": "another-id-2",
-    "EntryType": "http://standardhealthrecord.org/spec/shr/test/SimpleChild"
+    "_ShrId": "patient-id",
+    "_EntryId": "another-id-2",
+    "_EntryType": "http://standardhealthrecord.org/spec/shr/test/SimpleChild"
   }
 }
