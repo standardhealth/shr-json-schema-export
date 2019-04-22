@@ -3,63 +3,76 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://standardhealthrecord.org/test/shr/test",
     "title": "TODO: Figure out what the title should be.",
-    "type": "object",
-    "anyOf": [
-      { "$ref": "#/definitions/GroupPathClash" },
-      { "$ref": "#/definitions/Simple" }
-    ],
     "definitions": {
       "GroupPathClash": {
-        "description": "It is a group of elements with clashing names",
         "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
+          {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry"
+          },
           {
             "type": "object",
             "properties": {}
           }
-        ]
+        ],
+        "description": "It is a group of elements with clashing names"
       },
       "Simple": {
-        "description": "It is a simple element",
-        "concepts": [ { "code": "bar", "codeSystem": "http://foo.org", "displayText": "Foobar"}],
-        "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
-          {
-            "type": "object",
-            "properties": {
-              "Value": {
-                "type": "string"
-              }
-            },
-            "required": ["Value"]
+        "type": "object",
+        "properties": {
+          "Value": {
+            "type": "string"
+          },
+          "EntryType": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
           }
+        },
+        "concepts": [
+          {
+            "code": "bar",
+            "codeSystem": "http://foo.org",
+            "displayText": "Foobar"
+          }
+        ],
+        "description": "It is a simple element",
+        "required": [
+          "Value",
+          "EntryType"
         ]
       }
-    }
+    },
+    "type": "object",
+    "anyOf": [
+      {
+        "$ref": "#/definitions/GroupPathClash"
+      }
+    ]
   },
   "https://standardhealthrecord.org/test/shr/other/test": {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://standardhealthrecord.org/test/shr/other/test",
     "title": "TODO: Figure out what the title should be.",
-    "type": "object",
-    "anyOf": [
-      { "$ref": "#/definitions/Simple" }
-    ],
     "definitions": {
       "Simple": {
-        "description": "It is a simple element",
-        "concepts": [ { "code": "bar", "codeSystem": "http://foo.org", "displayText": "Foobar"}],
-        "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
-          {
-            "type": "object",
-            "properties": {
-              "Value": {
-                "type": "string"
-              }
-            },
-            "required": ["Value"]
+        "type": "object",
+        "properties": {
+          "Value": {
+            "type": "string"
+          },
+          "EntryType": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
           }
+        },
+        "concepts": [
+          {
+            "code": "bar",
+            "codeSystem": "http://foo.org",
+            "displayText": "Foobar"
+          }
+        ],
+        "description": "It is a simple element",
+        "required": [
+          "Value",
+          "EntryType"
         ]
       }
     }

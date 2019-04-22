@@ -3,18 +3,15 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://standardhealthrecord.org/test/shr/test",
     "title": "TODO: Figure out what the title should be.",
-    "type": "object",
-    "anyOf": [
-      { "$ref": "#/definitions/NotDoneDerivative" },
-      { "$ref": "#/definitions/Simple" },
-      { "$ref": "#/definitions/ValuelessElement" }
-    ],
     "definitions": {
       "NotDoneDerivative": {
-        "description": "It is an unfinished derivative element\nTBD Parents: An undetermined parent.\nTBD\nTBD Fields: An undetermined singular field.",
-        "concepts": [ { "code": "TBD", "codeSystem": "urn:tbd", "displayText": "Not sure of the concept"}],
         "allOf": [
-          { "$ref": "#/definitions/ValuelessElement" },
+          {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry"
+          },
+          {
+            "$ref": "#/definitions/ValuelessElement"
+          },
           {
             "type": "object",
             "properties": {
@@ -25,39 +22,61 @@
               }
             }
           }
+        ],
+        "concepts": [
+          {
+            "code": "TBD",
+            "codeSystem": "urn:tbd",
+            "displayText": "Not sure of the concept"
+          }
+        ],
+        "description": "It is an unfinished derivative element\nTBD Parents: An undetermined parent.\nTBD\nTBD Fields: An undetermined singular field."
+      },
+      "Simple": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "type": "string"
+          },
+          "EntryType": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
+          }
+        },
+        "concepts": [
+          {
+            "code": "bar",
+            "codeSystem": "http://foo.org",
+            "displayText": "Foobar"
+          }
+        ],
+        "description": "It is a simple element",
+        "required": [
+          "Value",
+          "EntryType"
         ]
       },
       "ValuelessElement": {
+        "type": "object",
+        "properties": {
+          "Simple": {
+            "$ref": "#/definitions/Simple"
+          },
+          "EntryType": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
+          }
+        },
         "description": "An element with no value.",
-        "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
-          {
-            "type": "object",
-            "properties": {
-              "Simple": {
-                "$ref": "#/definitions/Simple"
-              }
-            },
-            "required": [ "Simple" ]
-          }
-        ]
-      },
-      "Simple": {
-        "description": "It is a simple element",
-        "concepts": [ { "code": "bar", "codeSystem": "http://foo.org", "displayText": "Foobar"}],
-        "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
-          {
-            "type": "object",
-            "properties": {
-              "Value": {
-                "type": "string"
-              }
-            },
-            "required": [ "Value" ]
-          }
+        "required": [
+          "Simple",
+          "EntryType"
         ]
       }
-    }
+    },
+    "type": "object",
+    "anyOf": [
+      {
+        "$ref": "#/definitions/NotDoneDerivative"
+      }
+    ]
   }
 }

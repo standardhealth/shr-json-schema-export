@@ -3,17 +3,51 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://standardhealthrecord.org/test/shr/test",
     "title": "TODO: Figure out what the title should be.",
-    "type": "object",
-    "anyOf": [
-      { "$ref": "#/definitions/ElementValue" },
-      { "$ref": "#/definitions/Simple" },
-      { "$ref": "#/definitions/TwoDeepElementValue" }
-    ],
     "definitions": {
+      "ElementValue": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "$ref": "#/definitions/Simple"
+          },
+          "EntryType": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
+          }
+        },
+        "description": "It is an element with an element value",
+        "required": [
+          "Value",
+          "EntryType"
+        ]
+      },
+      "Simple": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "type": "string"
+          },
+          "EntryType": {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/EntryType"
+          }
+        },
+        "concepts": [
+          {
+            "code": "bar",
+            "codeSystem": "http://foo.org",
+            "displayText": "Foobar"
+          }
+        ],
+        "description": "It is a simple element",
+        "required": [
+          "Value",
+          "EntryType"
+        ]
+      },
       "TwoDeepElementValue": {
-        "description": "It is an element with a two-deep element value",
         "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
+          {
+            "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry"
+          },
           {
             "type": "object",
             "properties": {
@@ -21,41 +55,19 @@
                 "$ref": "#/definitions/ElementValue"
               }
             },
-            "required": ["Value"]
+            "required": [
+              "Value"
+            ]
           }
-        ]
-      },
-      "ElementValue": {
-        "description": "It is an element with an element value",
-        "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
-          {
-            "type": "object",
-            "properties": {
-              "Value": {
-                "$ref": "#/definitions/Simple"
-              }
-            },
-            "required": ["Value"]
-          }
-        ]
-      },
-      "Simple": {
-        "description": "It is a simple element",
-        "concepts": [ { "code": "bar", "codeSystem": "http://foo.org", "displayText": "Foobar"}],
-        "allOf": [
-          { "$ref": "https://standardhealthrecord.org/test/shr/base#/definitions/Entry" },
-          {
-            "type": "object",
-            "properties": {
-              "Value": {
-                "type": "string"
-              }
-            },
-            "required": ["Value"]
-          }
-        ]
+        ],
+        "description": "It is an element with a two-deep element value"
       }
-    }
+    },
+    "type": "object",
+    "anyOf": [
+      {
+        "$ref": "#/definitions/TwoDeepElementValue"
+      }
+    ]
   }
 }
