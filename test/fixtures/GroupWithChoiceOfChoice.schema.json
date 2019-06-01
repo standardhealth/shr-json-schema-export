@@ -1,4 +1,41 @@
 {
+  "https://standardhealthrecord.org/schema/cimpl/builtin": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://standardhealthrecord.org/schema/cimpl/builtin",
+    "title": "CIMPL Builtin Schema",
+    "definitions": {
+      "Concept": {
+        "type": "object",
+        "properties": {
+          "coding": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "$ref": "#/definitions/Coding"
+            }
+          }
+        },
+        "required": [
+          "coding"
+        ]
+      },
+      "Coding": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "system": {
+            "type": "string",
+            "format": "uri"
+          },
+          "display": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
   "https://standardhealthrecord.org/test/shr/test": {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://standardhealthrecord.org/test/shr/test",
@@ -8,23 +45,7 @@
         "type": "object",
         "properties": {
           "Value": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string"
-              },
-              "codeSystem": {
-                "type": "string",
-                "format": "uri"
-              },
-              "displayText": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "code",
-              "codeSystem"
-            ],
+            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/Concept",
             "valueSet": {
               "uri": "http://standardhealthrecord.org/test/vs/Coded",
               "strength": "REQUIRED"
@@ -128,9 +149,13 @@
         },
         "concepts": [
           {
-            "code": "bar",
-            "codeSystem": "http://foo.org",
-            "displayText": "Foobar"
+            "coding": [
+              {
+                "code": "bar",
+                "system": "http://foo.org",
+                "display": "Foobar"
+              }
+            ]
           }
         ],
         "description": "It is a simple element",
@@ -164,9 +189,13 @@
         },
         "concepts": [
           {
-            "code": "bar",
-            "codeSystem": "http://foo.org",
-            "displayText": "Foobar"
+            "coding": [
+              {
+                "code": "bar",
+                "system": "http://foo.org",
+                "display": "Foobar"
+              }
+            ]
           }
         ],
         "description": "It is a simple element",
