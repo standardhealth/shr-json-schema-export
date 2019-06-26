@@ -915,10 +915,9 @@ shelljs@^0.7.5:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shr-expand@^6.0.0:
+shr-expand@standardhealth/shr-expand#loggerific:
   version "6.0.0"
-  resolved "https://registry.yarnpkg.com/shr-expand/-/shr-expand-6.0.0.tgz#a2072f971e19b9f221e012c0056ee389a78633d7"
-  integrity sha512-zzjli5uVY23J4jHnr5Cr+iLkZ7+6RsHk3kQMksBPUR4ly96NXlCRgillJ3IszbdP3dHpBuWymcrAOjyz4C/lRA==
+  resolved "https://codeload.github.com/standardhealth/shr-expand/tar.gz/3a5007e386edd8518a88f8a566cdec566fda0bd6"
 
 shr-models@^6.0.0:
   version "6.0.0"
