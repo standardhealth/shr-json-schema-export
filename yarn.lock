@@ -920,10 +920,9 @@ shr-expand@^6.0.0:
   resolved "https://registry.yarnpkg.com/shr-expand/-/shr-expand-6.0.0.tgz#a2072f971e19b9f221e012c0056ee389a78633d7"
   integrity sha512-zzjli5uVY23J4jHnr5Cr+iLkZ7+6RsHk3kQMksBPUR4ly96NXlCRgillJ3IszbdP3dHpBuWymcrAOjyz4C/lRA==
 
-shr-models@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/shr-models/-/shr-models-6.0.0.tgz#6ffe6a48ae6bcf6c20e25dbfcc5b2954fca7d661"
-  integrity sha512-k8tU/YghNoFdpHxzC1ZpfpHMEMAJPZyGGAMd9QfOcCqDsETUyK9u76GuXoSlhXHjDM5CXOCeq6LmxWCQhK95iw==
+shr-models@standardhealth/shr-models#add-fixed-value-constraint:
+  version "6.1.0"
+  resolved "https://codeload.github.com/standardhealth/shr-models/tar.gz/5c47ef4737147264e2b44b927bff32a7332218af"
 
 shr-test-helpers@^6.0.0:
   version "6.0.0"
