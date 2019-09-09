@@ -39,13 +39,14 @@
           "OptionalValue": {
             "$ref": "#/definitions/OptionalValue"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "An element with an optional field.",
         "required": [
-          "EntryType"
+          "entryType"
         ]
       },
       "OptionalValue": {
@@ -54,13 +55,14 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "An element with an optional value.",
         "required": [
-          "EntryType"
+          "entryType"
         ]
       }
     },

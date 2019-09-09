@@ -45,14 +45,15 @@
               "strength": "REQUIRED"
             }
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is a coded element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "CodedChoice": {
@@ -68,13 +69,14 @@
               }
             ]
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "An element with a choice of code fields.",
         "required": [
-          "EntryType"
+          "entryType"
         ]
       }
     },

@@ -69,14 +69,15 @@
           "Simple": {
             "$ref": "#/definitions/Simple"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is an element with a field.",
         "required": [
           "Simple",
-          "EntryType"
+          "entryType"
         ]
       },
       "NestedField": {
@@ -85,13 +86,14 @@
           "TwoDeepElementField": {
             "$ref": "#/definitions/TwoDeepElementField"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is an element with a nested field.",
         "required": [
-          "EntryType"
+          "entryType"
         ]
       },
       "Simple": {
@@ -100,8 +102,9 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "concepts": [
@@ -118,7 +121,7 @@
         "description": "It is a simple element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "SimpleChild": {
@@ -139,14 +142,15 @@
           "ElementField": {
             "$ref": "#/definitions/ElementField"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is an element with a two-deep element field",
         "required": [
           "ElementField",
-          "EntryType"
+          "entryType"
         ]
       }
     },

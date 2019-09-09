@@ -11,14 +11,15 @@
           "Value": {
             "$ref": "#/definitions/Simple"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is an element with an element value",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "Simple": {
@@ -27,8 +28,9 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "concepts": [
@@ -45,7 +47,7 @@
         "description": "It is a simple element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "TwoDeepElementValue": {

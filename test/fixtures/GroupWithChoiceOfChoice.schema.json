@@ -15,14 +15,15 @@
               "strength": "REQUIRED"
             }
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is a coded element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "ElementValue": {
@@ -31,14 +32,15 @@
           "Value": {
             "$ref": "#/definitions/Simple"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is an element with an element value",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "ForeignElementValue": {
@@ -47,14 +49,15 @@
           "Value": {
             "$ref": "https://standardhealthrecord.org/test/shr/other/test#/definitions/Simple"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is an element with a foreign element value",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "GroupWithChoiceOfChoice": {
@@ -107,8 +110,9 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "concepts": [
@@ -125,7 +129,7 @@
         "description": "It is a simple element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       }
     },
@@ -147,8 +151,9 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "concepts": [
@@ -165,7 +170,7 @@
         "description": "It is a simple element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       }
     }

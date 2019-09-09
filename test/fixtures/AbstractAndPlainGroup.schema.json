@@ -45,8 +45,9 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "concepts": [
@@ -63,7 +64,7 @@
         "description": "It is not an entry element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "Simple": {
@@ -72,8 +73,9 @@
           "Value": {
             "type": "string"
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "concepts": [
@@ -90,7 +92,7 @@
         "description": "It is a simple element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       }
     }

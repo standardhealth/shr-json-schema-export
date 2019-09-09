@@ -72,14 +72,15 @@
               "http://standardhealthrecord.org/spec/shr/test/Simple"
             ]
           },
-          "EntryType": {
-            "$ref": "https://standardhealthrecord.org/schema/cimpl/builtin#/definitions/EntryType"
+          "entryType": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "description": "It is a reference to a simple element",
         "required": [
           "Value",
-          "EntryType"
+          "entryType"
         ]
       },
       "TypeConstrainedReference": {
