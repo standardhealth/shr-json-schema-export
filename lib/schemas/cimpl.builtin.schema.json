@@ -32,6 +32,69 @@
           "type": "string"
         }
       }
+    },
+    "Entry": {
+      "type": "object",
+      "properties": {
+        "ShrId": {
+          "$ref": "#/definitions/ShrId"
+        },
+        "EntryId": {
+          "$ref": "#/definitions/EntryId"
+        },
+        "EntryType": {
+          "$ref": "#/definitions/EntryType"
+        }
+      },
+      "description": "An entry in a health record."
+    },
+    "EntryId": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "EntryType": {
+          "$ref": "#/definitions/EntryType"
+        }
+      },
+      "description": "A persistent, permanent identifier for an entry in a health record, unique within the scope of the health record.",
+      "required": [
+        "Value",
+        "EntryType"
+      ]
+    },
+    "EntryType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string",
+          "format": "uri"
+        },
+        "EntryType": {
+          "$ref": "#/definitions/EntryType"
+        }
+      },
+      "description": "The class of the item, as a URI.",
+      "required": [
+        "Value"
+      ]
+    },
+    "ShrId": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "EntryType": {
+          "$ref": "#/definitions/EntryType"
+        }
+      },
+      "description": "A unique, persistent, permanent identifier for the overall health record belonging to the Patient.",
+      "required": [
+        "Value",
+        "EntryType"
+      ]
     }
   }
 }
